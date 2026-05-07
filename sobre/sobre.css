@@ -1,0 +1,405 @@
+:root {
+  --rosa: #c06aa5;
+  --rosa-claro: #f6e9f2;
+  --texto: #7a3b6a;
+}
+
+/* 1. RESET E ESTRUTURA GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(90deg, #894589 0%, #eebbea 20%, #eebbea 80%, #894589 100%);
+  background-attachment: fixed;
+  color: var(--texto);
+  zoom: 1.25;
+}
+
+.page {
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+  box-shadow: 0 0 100px rgba(122, 59, 106, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+/* 2. TIPOGRAFIA */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--texto);
+}
+
+/* 3. HEADER / NAV (Top) */
+.footer-top {
+    display: block !important;
+    background-color: #7a3b6a;
+    border-bottom: 1px solid rgba(122, 59, 106, 0.1);
+    padding: 20px 0; /* Padding fixo para ambas as páginas */
+}
+
+.footer-container {
+     max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.footer-logo img {
+    max-height: 80px; /* Ajuste para não estourar a altura */
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center; /* Garante que o texto fique no meio da linha da imagem */
+  gap: 47px;
+  height: 80px; /* Mesma altura que definimos para a logo */
+}
+.footer-nav a {
+    text-decoration: none;
+    color: #ffffff; /* Cor roxa original da marca para melhor contraste */
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.3s;
+    line-height: 1; /* Trava a altura da linha do texto */
+    padding: 5px 0; /* Espaço igual em cima e embaixo */
+}
+
+/* Garante que a linha do "Active" não empurre nada para cima */
+
+
+.footer-nav a:hover, 
+.footer-nav a.active {
+    color: #eebbea;
+}
+.footer-nav a.active {
+    border-bottom: 2px solid var(--rosa);
+    padding-bottom: 5px;
+}
+
+.footer-nav a.active::after {
+  width: 100%;
+}
+
+/* 4. HERO SECTION */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
+  background-image: url("/img/bailarina-bg.png");
+  background-repeat: no-repeat;
+  background-position: 55% center;
+  background-size: 1200px;
+}
+
+.hero-text {
+    max-width: 520px;
+    /* Alterado de 620px para um valor menor para o texto "correr" para a esquerda */
+    margin-right: auto; 
+    margin-left: 2px; /* Controla a distância exata da borda esquerda */
+    
+    /* Mantive o transform vertical, mas removi qualquer deslocamento horizontal */
+    transform: translateY(-120px); 
+}
+
+/* Ajuste opcional para garantir que o container não trave o movimento */
+.hero .container {
+    display: flex;
+    justify-content: flex-start; /* Alinha o conteúdo ao início (esquerda) */
+    width: 100%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 5. HISTÓRIA */
+.titulo-historia {
+    text-align: left;
+    font-size: 3.2rem;
+    color: var(--texto);
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    transform: translateX(80px); /* Valor corrigido para igualar ao modalidades */
+}
+
+.historia-full {
+    position: relative;
+    background-color: #ffffff;
+    padding-bottom: 40px; /* Reduzido para evitar buracos brancos grandes */
+    overflow: hidden;
+}
+
+.historia-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.foto-historia {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.destaque-maior {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.texto-descricao {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Botão Estilo "Suave" */
+.btn-suave {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 30px;
+  border: 1px solid rgba(192, 106, 165, 0.3);
+  border-radius: 30px;
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 500;
+  background: #fdf6fa;
+  transition: all 0.3s ease;
+}
+
+.btn-suave span {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.btn-suave:hover {
+  border-color: var(--rosa);
+  background: #ffffff;
+}
+
+.btn-suave:hover span {
+  transform: translateX(5px);
+}
+
+
+/* 6. CARDS DE DIFERENCIAIS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.card {
+  background: #ffffff !important;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 20px 30px rgba(0, 0, 1, 0.15) !important;
+  position: relative; 
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(122, 59, 106, 0.25) !important;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 12px 0 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+}
+
+.card-icon {
+  width: 100px;
+  margin: 0 auto 12px;
+  display: block;
+}
+
+/* 7. ESTRUTURA */
+.estrutura-full {
+  margin-top: 100px;
+  padding-bottom: 60px;
+}
+
+.titulo-sessao-grande {
+  font-size: 2.9rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.sub-texto-vazado {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 45px;
+}
+
+.estrutura-grid-nova {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  text-align: center;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 30px rgba(122, 59, 106, 0.1);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+  transform: scale(1.08);
+}
+
+.estrutura-card-novo span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* 8. FOOTER INTEGRADO (RODAPÉ FINAL) */
+.footer-integrado {
+  background-color: #7a3b6a; 
+  color: #ffffff;
+  /* Reduzi de 80px/40px para 40px no topo e 15px na base */
+  padding: 70px 0 0px 0;
+  margin-top: auto;
+}
+
+.titulo-cta {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cta-interna {
+  text-align: center;
+  /* Diminuí o espaço abaixo do botão para a linha subir */
+  padding-bottom: 25px;
+}
+
+/* Botão Estilo "Home" */
+.btn-experimental {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #7a3b6a;
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-experimental:hover {
+  transform: translateY(-3px);
+  background-color: #f6e9f2;
+}
+
+.linha-divisora {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  /* Diminuí de 30px para 15px */
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo principal */
+    align-items: center;
+    position: relative; /* Permite que os ícones fiquem fixos na direita */
+    padding: 20px 0;
+    font-size: 0.9rem;
+    min-height: 10px 0; /* Garante altura para não achatar */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 20px 0;
+}
+
+/* Criamos um espaço vazio na esquerda para equilibrar com os ícones da direita */
+.footer-bottom::before {
+    content: "";
+    flex: 1;
+}
+
+.footer-bottom p {
+    flex: 2; /* Ocupa o dobro do espaço para garantir a centralização */
+    text-align: center;
+    margin: 0;
+}
+
+.social-icons {
+    flex: 1; /* Ocupa o mesmo espaço que o ::before */
+    display: flex;
+    justify-content: flex-end; /* Empurra os ícones para o fim da direita */
+    gap: 20px;
+}
+
+/* Mantendo seus ajustes de tamanho dos ícones */
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.social-icons a[aria-label="Facebook"] {
+    transform: translateY(-1.5px); /* Sobe o ícone levemente para compensar o peso visual */
+}
+
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+/* 9. UTILITÁRIOS E GAPS */
+.section {
+  margin-top: 80px;
+}
