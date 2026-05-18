@@ -102,7 +102,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
-  background-image: url("/img/bailarina-bg.png");
+  background-image: url("/img/bailarina-bg.webp");
   background-repeat: no-repeat;
   background-position: 55% center;
   background-size: 1200px;
