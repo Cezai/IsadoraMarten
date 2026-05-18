@@ -165,7 +165,7 @@ h1, h2, h3, h4 {
     align-items: center;
     /* Isso cria um fundo que vai do branco para o rosa claro até o fim da tela */
     background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
-    background-image: url("/img/bailarina-bg.png");
+    background-image: url("/img/bailarina-bg.webp");
     background-repeat: no-repeat;
     background-position: 55% center; /* Trava ela mais para a direita */
     background-size: 1200px; /* Trava o tamanho em pixels para não quebrar no zoom */
@@ -418,4 +418,39 @@ h1, h2, h3, h4 {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(192, 106, 165, 0.5);
     background-color: #a85a90;
+}
+
+@media (max-width: 900px) {
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 100px 0;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-text {
+    margin-right: 0;
+    transform: none;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
+  .foto {
+    height: 300px;
+  }
+
 }
