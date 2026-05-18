@@ -13,3 +13,5 @@ links.forEach(link => {
     link.classList.add("active");
   }
 });
+
+document.getElementById("ano-atual").textContent = new Date().getFullYear();
