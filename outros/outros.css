@@ -165,7 +165,7 @@ h1, h2, h3, h4 {
     align-items: center;
     /* Isso cria um fundo que vai do branco para o rosa claro até o fim da tela */
     background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
-    background-image: url("/img/bailarina-bg.png");
+    background-image: url("/img/bailarina-bg.webp");
     background-repeat: no-repeat;
     background-position: 55% center; /* Trava ela mais para a direita */
     background-size: 1200px; /* Trava o tamanho em pixels para não quebrar no zoom */
@@ -531,4 +531,166 @@ h1, h2, h3, h4 {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(192, 106, 165, 0.5);
     background-color: #a85a90;
+}
+
+/* ========================================= */
+/* RESPONSIVIDADE */
+/* ========================================= */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        background-position: center right;
+        background-size: cover;
+        min-height: 50vh;
+        padding: 80px 0;
+    }
+
+    .hero-text {
+        margin-right: 0;
+        max-width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-text p {
+        font-size: 1.15rem;
+    }
+
+    .coluna-cards {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        height: auto;
+    }
+
+    .footer-nav a {
+        margin-left: 0;
+        font-size: 0.95rem;
+    }
+
+    /* HERO */
+
+    .hero {
+        background-image: none;
+        min-height: auto;
+        padding: 70px 0;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* CONTEÚDO */
+
+    .flex-main {
+        padding: 20px 0;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .card-horizontal {
+        padding: 20px;
+    }
+
+    .card-horizontal:hover {
+        transform: none;
+    }
+
+    .card-horizontal .texts h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-horizontal .texts p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* FOOTER */
+
+    .titulo-cta {
+        font-size: 1.8rem;
+    }
+
+    .btn-experimental {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-bottom::before {
+        display: none;
+    }
+
+    .footer-bottom p {
+        flex: unset;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-text h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+
+    .about-title {
+        font-size: 1.7rem;
+    }
+
+    .card-horizontal {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .card-horizontal .texts h3 {
+        font-size: 1.15rem;
+    }
+
+    .card-horizontal .texts p {
+        font-size: 0.9rem;
+    }
 }
