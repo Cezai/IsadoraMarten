@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { inicio: 142, fim: 146, titulo: "Aulões Abertos 2025", categoria: "eventos" },
         { inicio: 147, fim: 153, titulo: "Carnaval", categoria: "aulas" },
         { inicio: 154, fim: 155, titulo: "Páscoa", categoria: "aulas" },
-        { inicio: 156, fim: 182, titulo: "Final de Ano Dançante", categoria: "colonia" }
+        { inicio: 156, fim: 182, titulo: "Final de Ano Dançante", categoria: "colonia" },
+        { inicio: 183, fim: 183, titulo: "Cultura Talent - Theatro Guarany (2026)", categoria: "eventos" }
     ];
 
     // Esse código vai ler a sua tabela acima e criar os cards certinhos
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.add('card', lote.categoria);
 
             card.innerHTML = `
-                <img src="/img/galeria/foto (${i}).jpeg" alt="${lote.titulo} - Foto ${i}" loading="lazy">
+                <img src="/img/galeria/foto (${i}).webp" alt="${lote.titulo} - Foto ${i}" loading="lazy" decoding="async">
                 <h3>${lote.titulo}</h3>
                 <p>Registro ${i}</p>
             `;
@@ -111,7 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
         currentIndex = index;
         const imgSource = visibleCards[currentIndex].querySelector('img').src;
-        lightboxImg.src = imgSource;
+        lightboxImg.src = imgSource; 
+        const nextIndex = (currentIndex + 1) % visibleCards.length;
+const preloadImg = new Image();
+preloadImg.src = visibleCards[nextIndex].querySelector('img').src;
     }
 
     // Evento de clique na Galeria (escuta os cards que criamos lá em cima)
@@ -140,3 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "Escape") lightbox.classList.remove('active');
     });
 });
+
+document.getElementById("ano-atual").textContent =
+  new Date().getFullYear();
