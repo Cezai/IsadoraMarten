@@ -35,7 +35,7 @@ const eventosAno = {
   "2026-12-31": { nome: "Véspera de Ano Novo (Funcionamento reduzido após o meio-dia)", tipo: "event" }
 };
 
-let dataAtual = new Date(2026, 0, 1); // Inicializa no ano de 2026 (Mês 0 = Janeiro)
+let dataAtual = new Date(); // Inicializa no ano de 2026 (Mês 0 = Janeiro)
 
 function renderCalendar() {
   const month = dataAtual.getMonth();
