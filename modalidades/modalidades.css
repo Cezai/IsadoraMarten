@@ -527,93 +527,48 @@ h1, h2, h3, h4 {
     box-shadow: 0 12px 25px rgba(192, 106, 165, 0.5);
     background-color: #a85a90;
 }
+@media (max-width: 1024px) {
+    html { font-size: 100%; }
+    .hero { background-size: cover; background-position: center; min-height: 60vh; }
+    .hero-text { margin-right: 0; max-width: 100%; transform: none; text-align: center; padding: 40px 20px; }
+}
 
 @media (max-width: 768px) {
+    html { font-size: 95%; }
+    
+    .footer-container { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
+    .footer-nav { flex-wrap: wrap; justify-content: center; height: auto; gap: 15px; }
+    
+    .hero { background-image: none; min-height: auto; padding: 60px 0; }
+    
+    .titulo-historia, .titulo-sessao-grande, .sub-texto-vazado, .about-title { text-align: center; transform: none; }
+    .historia-grid, .estrutura-grid-nova { grid-template-columns: 1fr; gap: 25px; text-align: center; }
+    .destaque-maior { margin: 0 auto 20px auto; }
+    
+    /* Cards de Modalidades (Aqui é a mágica pro celular) */
+    .flex-main { padding: 20px 10px; }
+    .card-horizontal { flex-direction: column; text-align: center; padding: 25px; gap: 20px; }
+    .card-content-left { flex-direction: column; gap: 15px; }
+    .card-icon-small { width: 85px; height: 85px; margin: 0 auto; }
+    .card-horizontal .texts h3, .card-horizontal .texts p { text-align: center; }
+    /* A foto vai pra baixo e ocupa 100% da largura do card */
+    .card-image-right { width: 100%; height: 200px; margin-top: 10px; }
+    
+    .img-wrapper { height: 250px; }
+    
+    /* Footer Integrado */
+    .titulo-cta { font-size: 2rem; }
+    .btn-experimental { width: 100%; max-width: 320px; }
+    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+    .footer-bottom::before { display: none; }
+    .footer-bottom p { flex: unset; }
+    .social-icons { justify-content: center; }
+}
 
-  body {
-    zoom: 1;
-  }
-
-  .footer-container,
-  .historia-grid,
-  .estrutura-grid-nova,
-  .card-content-left,
-  .footer-bottom {
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-    height: auto;
-  }
-
-  .hero {
-    min-height: 50vh;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .hero-text {
-    margin-right: 0;
-    transform: none;
-    text-align: center;
-    padding: 40px 0;
-  }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-text p {
-    font-size: 1.1rem;
-  }
-
-  .titulo-historia,
-  .titulo-sessao-grande,
-  .about-title {
-    transform: none;
-    text-align: center;
-    font-size: 2.2rem;
-  }
-
-  .historia-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .estrutura-grid-nova {
-    grid-template-columns: 1fr;
-  }
-
-  .card-horizontal {
-    padding: 18px;
-  }
-
-  .card-content-left {
-    flex-direction: column;
-  }
-
-  .card-horizontal .texts h3,
-  .card-horizontal .texts p {
-    text-align: center;
-  }
-
-  .img-wrapper {
-    height: 260px;
-  }
-
-  .footer-bottom {
-    gap: 20px;
-  }
-
-  .footer-bottom::before {
-    display: none;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
+@media (max-width: 480px) {
+    .hero-text h1 { font-size: 1.8rem; }
+    .modalidade-card { padding: 20px; }
+    .modalidade-card h3 { font-size: 1.25rem; }
+    .modalidade-card p { font-size: 0.9rem; }
+    .btn-saiba-mais { width: 100%; text-align: center; }
 }

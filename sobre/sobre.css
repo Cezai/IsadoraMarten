@@ -406,3 +406,45 @@ h1, h2, h3, h4 {
   margin-top: 80px;
 }
 
+
+@media (max-width: 1024px) {
+    html { font-size: 100%; }
+    .hero { background-size: cover; background-position: center; min-height: 60vh; }
+    .hero-text { margin-left: 0; max-width: 100%; transform: none; text-align: center; padding: 40px 20px; }
+    .hero .container { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 95%; }
+    
+    .footer-container { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
+    .footer-nav { flex-wrap: wrap; justify-content: center; height: auto; gap: 15px; }
+    
+    .hero { background-image: none; min-height: auto; padding: 60px 0; }
+    
+    /* História e Textos */
+    .titulo-historia { text-align: center; transform: none; font-size: 2.4rem; }
+    .historia-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+    .destaque-maior { margin: 0 auto 20px auto; }
+    
+    /* Cards e Estrutura */
+    .cards { grid-template-columns: 1fr; gap: 20px; }
+    .estrutura-grid-nova { grid-template-columns: 1fr; gap: 25px; }
+    .titulo-sessao-grande, .sub-texto-vazado { text-align: center; }
+    .img-wrapper { height: 250px; }
+    
+    /* Footer Integrado */
+    .titulo-cta { font-size: 2rem; }
+    .btn-experimental { width: 100%; max-width: 320px; }
+    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+    .footer-bottom::before { display: none; }
+    .footer-bottom p { flex: unset; }
+    .social-icons { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 { font-size: 1.8rem; }
+    .about-content { padding: 20px 15px; }
+    .about-title { font-size: 1.6rem; }
+    .about-text { font-size: 0.95rem; }
+}

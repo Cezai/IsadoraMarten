@@ -434,93 +434,71 @@ h1, h2, h3, h4 {
   transform: scale(1.1);
 }
 
-/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .hero {
+    background-position: center right;
+    background-size: cover;
+    min-height: 50vh;
+    padding: 80px 0;
+  }
+  .hero-text {
+    margin-right: 0;
+    transform: none;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .hero-text h1 { font-size: 2.5rem; }
+  .hero-text p { font-size: 1.2rem; }
+}
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     gap: 20px;
     text-align: center;
   }
-
   .footer-nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 14px;
+    gap: 15px;
     height: auto;
   }
-
+  .footer-nav a { margin-left: 0; font-size: 0.95rem; }
+  
   .hero {
-    min-height: 50vh;
-    background-position: center;
-    background-size: cover;
-    padding: 40px 0;
+    min-height: auto;
+    background-image: none; 
+    padding: 70px 0;
   }
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 1rem; line-height: 1.6; }
 
-  .hero-text {
-    margin-right: 0;
-    transform: none;
-    text-align: center;
-    max-width: 100%;
-    padding: 0 15px;
+  .filters { gap: 10px; padding: 0 15px; }
+  .filter { font-size: 0.9rem; padding: 8px 16px; }
+  .galeria-grid { 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+    padding: 20px 15px; 
   }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-text p {
-    font-size: 1.1rem;
-  }
-
-  .filters {
-    gap: 10px;
-    padding: 0 15px;
-  }
-
-  .filter {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-
-  .galeria-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 15px;
-  }
-
-  .card img {
-    height: 280px; /* Mantém uma boa proporção em telas móveis */
-  }
-
-  .lightbox-img {
-    max-width: 95%;
-    max-height: 75vh;
-  }
-
-  .nav-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-
+  .card img { height: 280px; }
+  
+  .lightbox-img { max-width: 95%; max-height: 75vh; }
+  .nav-btn { width: 50px; height: 50px; font-size: 20px; }
   .prev { left: 15px; }
   .next { right: 15px; }
 
-  .titulo-cta {
-    font-size: 1.8rem;
-  }
+  .titulo-cta { font-size: 1.8rem; }
+  .btn-experimental { width: 100%; max-width: 320px; }
+  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+  .footer-bottom::before { display: none; }
+  .footer-bottom p { flex: unset; }
+  .social-icons { justify-content: center; }
+}
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  .footer-bottom::before {
-    display: none;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 1.7rem; }
+  .hero-text p { font-size: 0.95rem; }
+  .galeria-grid { grid-template-columns: 1fr; }
+  .card img { height: 250px; }
 }

@@ -470,7 +470,6 @@ h1, h2, h3, h4 {
         min-height: 50vh;
         padding: 80px 0;
     }
-
     .hero-text {
         margin-right: 0;
         transform: none;
@@ -478,23 +477,11 @@ h1, h2, h3, h4 {
         text-align: center;
         padding: 0 20px;
     }
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text p { font-size: 1.2rem; }
 
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-text p {
-        font-size: 1.2rem;
-    }
-
-    .calendar {
-        padding: 30px;
-    }
-
-    .calendar-grid span {
-        height: 55px;
-        font-size: 1rem;
-    }
+    .calendar { padding: 30px; }
+    .calendar-grid span { height: 55px; font-size: 1rem; }
 }
 
 @media (max-width: 768px) {
@@ -503,145 +490,51 @@ h1, h2, h3, h4 {
         gap: 20px;
         text-align: center;
     }
-
     .footer-nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
         height: auto;
     }
-
-    .footer-nav a {
-        margin-left: 0;
-        font-size: 0.95rem;
-    }
+    .footer-nav a { margin-left: 0; font-size: 0.95rem; }
 
     .hero {
         min-height: auto;
         background-image: none;
         padding: 70px 0;
     }
+    .hero-text h1 { font-size: 2rem; }
+    .hero-text p { font-size: 1rem; line-height: 1.6; }
 
-    .hero-text h1 {
-        font-size: 2rem;
-    }
+    .agenda-secao-principal { padding: 40px 15px; }
+    .event-card { padding: 25px; }
+    .event-card h3 { font-size: 1.3rem; }
 
-    .hero-text p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+    .calendar { padding: 20px; border-radius: 20px; }
+    .calendar-header h3 { font-size: 1.6rem; }
+    .btn-nav { font-size: 1.5rem; padding: 8px 14px; }
+    .calendar-grid { gap: 6px; }
+    .calendar-grid span { height: 45px; font-size: 0.9rem; border-radius: 10px; }
+    .day-name { font-size: 0.85rem; padding-bottom: 10px; }
+    .legend { flex-direction: column; align-items: flex-start; gap: 12px; padding-left: 10px; }
+    .month-events-list { padding: 20px; }
+    .event-list-item { font-size: 0.95rem; }
 
-    .agenda-secao-principal {
-        padding: 40px 15px;
-    }
-
-    .event-card {
-        padding: 25px;
-    }
-
-    .event-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .calendar {
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    .calendar-header h3 {
-        font-size: 1.6rem;
-    }
-
-    .btn-nav {
-        font-size: 1.5rem;
-        padding: 8px 14px;
-    }
-
-    .calendar-grid {
-        gap: 6px;
-    }
-
-    .calendar-grid span {
-        height: 45px;
-        font-size: 0.9rem;
-        border-radius: 10px;
-    }
-
-    .day-name {
-        font-size: 0.85rem;
-        padding-bottom: 10px;
-    }
-
-    .legend {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        padding-left: 10px;
-    }
-
-    .month-events-list {
-        padding: 20px;
-    }
-
-    .event-list-item {
-        font-size: 0.95rem;
-    }
-
-    .titulo-cta {
-        font-size: 1.8rem;
-    }
-
-    .btn-experimental {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .footer-bottom::before {
-        display: none;
-    }
-
-    .footer-bottom p {
-        flex: unset;
-    }
-
-    .social-icons {
-        justify-content: center;
-    }
+    .titulo-cta { font-size: 1.8rem; }
+    .btn-experimental { width: 100%; max-width: 320px; }
+    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+    .footer-bottom::before { display: none; }
+    .footer-bottom p { flex: unset; }
+    .social-icons { justify-content: center; }
 }
 
 @media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 1.7rem;
-    }
-
-    .hero-text p {
-        font-size: 0.95rem;
-    }
-
-    .calendar {
-        padding: 15px 10px;
-    }
-
-    .calendar-grid span {
-        height: 38px;
-        font-size: 0.8rem;
-    }
-
-    .calendar-header h3 {
-        font-size: 1.3rem;
-    }
-
-    .event-card {
-        padding: 18px;
-    }
-
-    .subtitulo-agenda {
-        font-size: 1.6rem;
-    }
+    .hero-text h1 { font-size: 1.7rem; }
+    .hero-text p { font-size: 0.95rem; }
+    
+    .calendar { padding: 15px 10px; }
+    .calendar-grid span { height: 38px; font-size: 0.8rem; }
+    .calendar-header h3 { font-size: 1.3rem; }
+    .event-card { padding: 18px; }
+    .subtitulo-agenda { font-size: 1.6rem; }
 }

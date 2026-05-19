@@ -445,14 +445,42 @@ h1, h2, h3, h4 {
   color: #ffffff
 }
 
-/* Responsividade para Celular */
+@media (max-width: 1024px) {
+    /* O "Pulo do Gato": Reduz a escala geral do site (1rem volta a ser 16px) */
+    html { font-size: 100%; } 
+    
+    .hero { background-size: cover; background-position: center; min-height: 60vh; }
+    .hero-text { margin-right: 0; max-width: 100%; transform: none; text-align: center; padding: 0 20px; }
+    .about-text { text-align: center; max-width: 100%; }
+}
+
 @media (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-  .footer-right {
-    align-items: center;
-    text-align: center;
-  }
+    /* Diminui a escala mais um pouco para telas pequenas */
+    html { font-size: 95%; }
+    
+    /* Header e Navegação */
+    .footer-container { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
+    .footer-nav { flex-wrap: wrap; justify-content: center; height: auto; gap: 15px; }
+    
+    /* Hero */
+    .hero { min-height: auto; padding: 60px 20px; background-image: none; } /* Removemos a imagem de fundo no celular para leitura limpa */
+    .hero-text h1 { font-size: 2.2rem; }
+    
+    /* Estrutura de grid para os cards */
+    .cards { grid-template-columns: 1fr; gap: 20px; }
+    
+    /* Footer Final */
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .footer-right { align-items: center; text-align: center; width: 100%; }
+    .footer-right .about-title { text-align: center; width: 100%; }
+    .btn-experimental { width: 100%; max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 { font-size: 1.8rem; }
+    .hero-text p { font-size: 0.95rem; }
+    .cta-button { padding: 12px 25px; font-size: 0.9rem; }
+    
+    .card-home { padding: 20px; }
+    .card-home h3 { font-size: 1.2rem; }
 }
