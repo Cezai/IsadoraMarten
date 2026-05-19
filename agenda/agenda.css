@@ -4,6 +4,10 @@
   --texto: #7a3b6a;
 }
 
+html {
+  font-size: 125%; /* Remove o zoom e aplica a escala de forma limpa e nativa */
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -19,13 +23,12 @@ body {
     color: var(--texto);
     margin: 0;
     padding: 0;
-    zoom: 1.25;
 }
 
-/* O MIOLO DO SITE */
+/* O MIOLO DO SITE (Ajustado para 1500px para manter o padrão das outras páginas) */
 .page {
     background-color: #ffffff;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     position: relative;
     box-shadow: 0 0 100px rgba(0,0,0,0.1);
@@ -42,7 +45,7 @@ h1, h2, h3, h4 {
 
 /* CONTAINER */
 .container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0px 20px;
 }
@@ -54,6 +57,7 @@ h1, h2, h3, h4 {
   margin-left: 1.2rem;
 }
 
+/* HEADER (Footer-Top) */
 .footer-top {
     display: block !important;
     background-color: #7a3b6a;
@@ -62,23 +66,23 @@ h1, h2, h3, h4 {
 }
 
 .footer-container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 40px;
 }
 
 .footer-logo img {
-    max-height: 80px;
+    max-height: 100px; /* Redimensionado proporcionalmente */
 }
 
 .footer-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
-  height: 80px;
+  gap: 23px; /* Espaço entre links reajustado */
+  height: 100px;
 }
 
 .footer-nav a {
@@ -107,20 +111,21 @@ h1, h2, h3, h4 {
 }
 
 .hero {
-    min-height: 60vh;
+    min-height: 73vh;
     display: flex;
     align-items: center;
     background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
     background-image: url("/img/bailarina-bg.webp");
     background-repeat: no-repeat;
-    background-position: 55% center;
-    background-size: 1200px;
+    background-size: 1500px;
+    background-position: center right;
 }
 
 .hero-text {
-  max-width: 520px;
-   margin-right: 620px;
-   transform: translateY(-120px);
+    max-width: 650px;
+    margin-right: 775px; /* Evita que o texto encavale com a imagem de fundo */
+    margin-left: 20px;
+    transform: translateY(-80px);
 }
 
 .hero-text h1 {
@@ -135,91 +140,87 @@ h1, h2, h3, h4 {
 
 /* SEÇÃO PRINCIPAL DA AGENDA */
 .agenda-secao-principal {
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
-/* SEÇÃO PRINCIPAL DA AGENDA - CENTRALIZADA */
 .agenda-superior {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os eventos horizontalmente */
+    align-items: center; 
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .agenda-eventos {
     width: 100%;
-    max-width: 800px; /* Define uma largura máxima confortável para leitura */
+    max-width: 950px; /* Alargado ligeiramente para harmonizar no layout maior */
 }
 
 .subtitulo-agenda {
-    text-align: center; /* Centraliza o título "Próximos Eventos" */
-    font-size: 2rem;
-    margin-bottom: 30px;
+    text-align: center; 
+    font-size: 2.4rem;
+    margin-bottom: 40px;
 }
 
-.subtitulo-agenda {
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-/* CARDS COM DEGRADÊ */
+/* CARDS DE EVENTOS */
 .event-card {
     background: linear-gradient(135deg, #e2b2cd 0%, #f4f0f4 100%);
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(192, 106, 165, 0.1);
-    box-shadow: 0 10px 30px rgba(122, 59, 106, 0.05);
-    transition: transform 0.3s ease;
+    border-radius: 24px;
+    padding: 35px; /* Mais respiro interno */
+    margin-bottom: 25px;
+    border: 1px solid rgba(192, 106, 165, 0.15);
+    box-shadow: 0 12px 35px rgba(122, 59, 106, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-card:hover {
-    transform: translateX(10px);
+    transform: translateX(12px);
+    box-shadow: 0 15px 40px rgba(122, 59, 106, 0.12);
 }
 
 .event-card h3 {
     color: var(--texto);
-    font-size: 1.4rem;
-    margin-bottom: 8px;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
 }
 
 .event-date {
     display: block;
     font-weight: 500;
     color: var(--rosa);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
 }
 
 .event-local {
     display: block;
     font-style: italic;
-    margin-bottom: 12px;
-    opacity: 0.8;
+    margin-bottom: 16px;
+    opacity: 0.85;
+    font-size: 0.95rem;
 }
 
-.agenda-imagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+.event-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
-/* CALENDÁRIO NA PARTE DE BAIXO */
+/* CALENDÁRIO */
 .agenda-inferior {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .calendar {
     background: #ffffff;
     padding: 50px;
     border-radius: 30px;
-    box-shadow: 0 20px 50px rgba(122, 59, 106, 0.05);
+    box-shadow: 0 20px 50px rgba(122, 59, 106, 0.07);
     text-align: center;
+    width: 100%;
+    max-width: 950px; /* Pareia perfeitamente com a largura dos cards acima */
 }
 
-/* NAVEGAÇÃO DO CALENDÁRIO */
 .calendar-header {
     display: flex;
     justify-content: space-between;
@@ -229,37 +230,37 @@ h1, h2, h3, h4 {
 
 .calendar-header h3 {
     margin-bottom: 0;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: var(--texto);
 }
 
 .btn-nav {
     background: transparent;
     border: none;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--rosa);
     cursor: pointer;
     transition: transform 0.3s ease;
-    padding: 10px 20px;
+    padding: 10px 25px;
 }
 
 .btn-nav:hover {
-    transform: scale(1.3);
+    transform: scale(1.25);
 }
 
 /* GRADE DOS DIAS */
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 12px;
-    max-width: 900px;
+    gap: 14px; /* Grid ligeiramente mais espaçado */
+    width: 100%;
     margin: 0 auto;
 }
 
 .day-name {
     font-weight: 600;
     color: var(--rosa);
-    font-size: 1rem;
+    font-size: 1.05rem;
     padding-bottom: 15px;
     font-family: 'Inter', sans-serif;
 }
@@ -268,16 +269,17 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
-    border-radius: 15px;
+    height: 70px; /* Dias ligeiramente maiores e imponentes */
+    border-radius: 18px;
     background: #ffffff;
     border: 1px solid #f8f1f6;
     font-family: 'Inter', sans-serif;
-    color: #555;
+    color: #444;
+    font-size: 1.1rem;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
-/* Estilo para casas vazias na grade */
 .calendar-grid span.empty {
     background: transparent;
     border: none;
@@ -288,17 +290,16 @@ h1, h2, h3, h4 {
     box-shadow: none;
 }
 
-/* Efeito de hover nos dias normais */
 .calendar-grid span:hover:not(.day-name):not(.empty) {
     border-color: var(--rosa);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(192, 106, 165, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(192, 106, 165, 0.15);
 }
 
-/* ESTILOS ESPECÍFICOS DOS EVENTOS */
+/* CASAS COM EVENTOS INDIVIDUAIS */
 .calendar-grid .event { 
     background: #f9dcee !important; 
-    color: var(--rosa) !important; 
+    color: var(--texto) !important; 
     border: 1.5px solid #eebbea !important;
     font-weight: 600;
 }
@@ -321,24 +322,25 @@ h1, h2, h3, h4 {
 .legend {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #f0f0f0;
+    margin-top: 45px;
+    padding-top: 25px;
+    border-top: 1px solid #f5e9f2;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.95rem;
+    gap: 12px;
+    font-size: 1rem;
     color: var(--texto);
     font-weight: 500;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -346,26 +348,24 @@ h1, h2, h3, h4 {
 .dot.special { background-color: var(--rosa); }
 .dot.important { background-color: #7a3b6a; }
 
-/* LISTA DE EVENTOS DO MÊS ATUAL */
+/* LISTA ABAIXO DO CALENDÁRIO */
 .month-events-list {
-    margin-top: 30px;
+    margin-top: 40px;
     background-color: #fdf6fa;
-    border-radius: 15px;
-    padding: 25px;
+    border-radius: 20px;
+    padding: 30px;
     text-align: left;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
 
 .event-list-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    font-size: 1.05rem;
+    gap: 15px;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
     color: var(--texto);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .event-list-item:last-child {
@@ -377,9 +377,10 @@ h1, h2, h3, h4 {
     font-style: italic;
     text-align: center;
     margin: 0;
+    font-size: 1.05rem;
 }
 
-/* FOOTER */
+/* CTA / INTEGRADO */
 .footer-integrado {
   background-color: #7a3b6a; 
   color: #ffffff;
@@ -448,8 +449,8 @@ h1, h2, h3, h4 {
 }
 
 .social-icons img {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
 }
 
@@ -461,8 +462,8 @@ h1, h2, h3, h4 {
   transform: scale(1.1);
 }
 
+/* RESPONSIVO */
 @media (max-width: 1024px) {
-
     .hero {
         background-position: center right;
         background-size: cover;
@@ -475,6 +476,7 @@ h1, h2, h3, h4 {
         transform: none;
         max-width: 100%;
         text-align: center;
+        padding: 0 20px;
     }
 
     .hero-text h1 {
@@ -490,18 +492,16 @@ h1, h2, h3, h4 {
     }
 
     .calendar-grid span {
-        height: 50px;
-        font-size: 0.9rem;
+        height: 55px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-
-    /* HEADER */
-
     .footer-container {
         flex-direction: column;
         gap: 20px;
+        text-align: center;
     }
 
     .footer-nav {
@@ -516,16 +516,10 @@ h1, h2, h3, h4 {
         font-size: 0.95rem;
     }
 
-    /* HERO */
-
     .hero {
         min-height: auto;
         background-image: none;
         padding: 70px 0;
-    }
-
-    .hero-text {
-        text-align: center;
     }
 
     .hero-text h1 {
@@ -537,21 +531,17 @@ h1, h2, h3, h4 {
         line-height: 1.6;
     }
 
-    /* EVENTOS */
-
     .agenda-secao-principal {
-        padding: 40px 0;
+        padding: 40px 15px;
     }
 
     .event-card {
-        padding: 20px;
+        padding: 25px;
     }
 
     .event-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
-
-    /* CALENDÁRIO */
 
     .calendar {
         padding: 20px;
@@ -559,11 +549,11 @@ h1, h2, h3, h4 {
     }
 
     .calendar-header h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .btn-nav {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         padding: 8px 14px;
     }
 
@@ -572,25 +562,22 @@ h1, h2, h3, h4 {
     }
 
     .calendar-grid span {
-        height: 42px;
-        font-size: 0.8rem;
+        height: 45px;
+        font-size: 0.9rem;
         border-radius: 10px;
     }
 
     .day-name {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         padding-bottom: 10px;
     }
-
-    /* LEGENDA */
 
     .legend {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        gap: 12px;
+        padding-left: 10px;
     }
-
-    /* EVENTOS DO MÊS */
 
     .month-events-list {
         padding: 20px;
@@ -599,8 +586,6 @@ h1, h2, h3, h4 {
     .event-list-item {
         font-size: 0.95rem;
     }
-
-    /* FOOTER */
 
     .titulo-cta {
         font-size: 1.8rem;
@@ -631,7 +616,6 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 480px) {
-
     .hero-text h1 {
         font-size: 1.7rem;
     }
@@ -641,20 +625,20 @@ h1, h2, h3, h4 {
     }
 
     .calendar {
-        padding: 15px;
+        padding: 15px 10px;
     }
 
     .calendar-grid span {
-        height: 36px;
-        font-size: 0.75rem;
+        height: 38px;
+        font-size: 0.8rem;
     }
 
     .calendar-header h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .event-card {
-        padding: 16px;
+        padding: 18px;
     }
 
     .subtitulo-agenda {
