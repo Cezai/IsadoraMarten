@@ -129,7 +129,7 @@ h1, h2, h3, h4 {
 .footer-nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 23px;
     height: 80px;
 }
 

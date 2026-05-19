@@ -4,6 +4,10 @@
   --texto: #7a3b6a;
 }
 
+html {
+  font-size: 125%; /* Substitui o zoom de forma limpa e nativa */
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -14,23 +18,21 @@
 /* FUNDO GLOBAL */
 body {
     font-family: 'Inter', sans-serif;
-    /* O gradiente agora só aparece nas laterais */
     background: linear-gradient(90deg, #894589 0%, #eebbea 20%, #eebbea 80%, #894589 100%);
     background-attachment: fixed;
     color: var(--texto);
     margin: 0;
     padding: 0;
-    zoom: 1.25;
 }
 
-/* O MIOLO DO SITE (Os 1200px centrais) */
+/* O MIOLO DO SITE (Ajustado para 1500px como nas outras) */
 .page {
     background-color: #ffffff;
-    max-width: 1200px;
+    max-width: 1500px; 
     margin: 0 auto;
     position: relative;
     box-shadow: 0 0 100px rgba(0,0,0,0.1);
-    display: flex; /* Ajuda a esticar o conteúdo */
+    display: flex; 
     flex-direction: column;
     min-height: 100vh;
 }
@@ -41,16 +43,15 @@ h1, h2, h3, h4 {
   color: var(--texto);
 }
 
-/* CONTAINER */
+/* CONTAINER (Alinhado com a largura maior) */
 .container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0px 20px;
-  box-shadow: 20px 0 50px -20px rgba(192, 106, 165, 0.05), 
-               -20px 0 50px -20px rgba(192, 106, 165, 0.05);
 }
+
 .about-title {
-   font-size: 2.4rem;
+  font-size: 2.4rem;
   margin-bottom: 24px;
   font-weight: 500;
 }
@@ -61,14 +62,13 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   max-width: 1100px;
 }
+
 .about-link {
   display: inline-block;
   margin-top: 20px;
-
   color: var(--rosa);
   text-decoration: none;
   font-weight: 500;
-
   position: relative;
   padding-bottom: 6px;
 }
@@ -78,11 +78,9 @@ h1, h2, h3, h4 {
   position: absolute;
   left: 0;
   bottom: 0;
-
   width: 0%;
   height: 2px;
   background-color: currentColor;
-
   transition: width 0.3s ease;
 }
 
@@ -101,47 +99,47 @@ h1, h2, h3, h4 {
   color: var(--rosa);
 }
 
-
+/* HEADER (Footer-Top) */
 .footer-top {
     display: block !important;
-    background-color: #7a3b6a; /* Cor suave de fundo */
+    background-color: #7a3b6a; 
     border-bottom: 1px solid rgba(122, 59, 106, 0.1);
     padding: 20px 0;
 }
 
 .footer-container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 40px;
 }
 
 .footer-logo img {
-    max-height: 80px; /* Tamanho ideal para o logo Isadora Martén */
+    max-height: 100px; /* Redimensionado proporcionalmente */
 }
 
 .footer-nav {
   display: flex;
-  align-items: center; /* Garante que o texto fique no meio da linha da imagem */
-  gap: 28px;
-  height: 80px; /* Mesma altura que definimos para a logo */
+  align-items: center; 
+  gap: 23px; /* Espaçamento expandido */
+  height: 100px; 
 }
 
 .footer-nav a {
     text-decoration: none;
-    color: #ffffff; /* Cor roxa original da marca para melhor contraste */
+    color: #ffffff; 
     font-weight: 500;
     font-size: 1rem;
     transition: 0.3s;
-    line-height: 1; /* Trava a altura da linha do texto */
-    padding: 5px 0; /* Espaço igual em cima e embaixo */
+    line-height: 1; 
+    padding: 5px 0; 
 }
 
 .footer-nav a:hover, 
 .footer-nav a.active {
-    color: #eebbea; /* Mantém o rosa de destaque ao interagir */
+    color: #eebbea; 
 }
 
 .footer-nav a.active {
@@ -149,32 +147,27 @@ h1, h2, h3, h4 {
     padding-bottom: 5px;
 }
 
-.footer-nav a.active::after {
-  width: 100%;
-}
-
 /* HERO */
-
-.hero, .historia-full, .section, .estrutura-full, .cta-unificado {
-    background-color: transparent; /* Elas herdam o branco do .page */
+.hero, .equipe, .footer-integrado {
+    background-color: transparent; 
 }
 
 .hero {
-    min-height: 60vh;
+    min-height: 73vh; /* Ajustado para preencher melhor o topo */
     display: flex;
     align-items: center;
-    /* Isso cria um fundo que vai do branco para o rosa claro até o fim da tela */
     background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
     background-image: url("/img/bailarina-bg.webp");
     background-repeat: no-repeat;
-    background-position: 55% center; /* Trava ela mais para a direita */
-    background-size: 1200px; /* Trava o tamanho em pixels para não quebrar no zoom */
+    background-size: 1500px; 
+    background-position: center right;
 }
 
 .hero-text {
-  max-width: 520px;
-   margin-right: 620px;
-   transform: translateY(-120px);
+    max-width: 650px;
+    margin-right: 775px; /* Afasta o texto para não encavalar na imagem de fundo */
+    margin-left: 20px;
+    transform: translateY(-80px);
 }
 
 .hero-text h1 {
@@ -189,19 +182,20 @@ h1, h2, h3, h4 {
 
 /* EQUIPE */
 .equipe.container {
-    padding-top: 60px;
-    padding-bottom: 80px;
+    padding-top: 75px;
+    padding-bottom: 100px;
 }
 
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem; /* Aumentei o espaço entre eles */
+    gap: 3.8rem; /* Grid bem espaçada e elegante */
 }
+
 @keyframes slideUp {
     from { 
         opacity: 0; 
-        transform: translateY(30px); 
+        transform: translateY(38px); 
     }
     to { 
         opacity: 1; 
@@ -211,89 +205,92 @@ h1, h2, h3, h4 {
 
 .card {
     background: #ffffff;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px rgba(122, 59, 106, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 25px; /* Bordas mais suaves */
+    padding: 2.5rem; /* Mais espaço interno */
+    box-shadow: 0 12px 38px rgba(122, 59, 106, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(192, 106, 165, 0.1);
     animation: slideUp 0.8s ease forwards;
-    opacity: 0; /* Começa invisível para a animação funcionar */
+    opacity: 0; 
 }
 
-.card:nth-child(2) {
-    animation-delay: 0.2s;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(122, 59, 106, 0.22);
+    border-color: var(--rosa);
 }
 
-/* Se você adicionar mais cards no futuro, o delay continua: */
+.card:nth-child(2) { animation-delay: 0.2s; }
 .card:nth-child(3) { animation-delay: 0.4s; }
 .card:nth-child(4) { animation-delay: 0.6s; }
-
-.card:hover .foto img {
-    transform: scale(1.2); /* Zoom suave na imagem */
-}
+.card:nth-child(5) { animation-delay: 0.8s; }
 
 .foto {
-    height: 350px; /* Mais alto para fotos de corpo inteiro/meio corpo */
-    border-radius: 14px;
-    overflow: hidden; /* Corta a imagem se for maior que a div */
-    margin-bottom: 1.5rem;
+    height: 438px; /* Fotos maiores e imponentes */
+    border-radius: 18px;
+    overflow: hidden; 
+    margin-bottom: 1.8rem;
     background: var(--rosa-claro);
-    overflow: hidden;
 }
 
 .foto img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a foto preencher o espaço sem deformar */
+    object-fit: cover; 
     display: block;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+.card:hover .foto img {
+    transform: scale(1.08); 
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
 .cargo {
     font-weight: 500;
     color: var(--rosa);
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
 }
 
 .detalhes-professor {
-    margin-top: 15px;
+    margin-top: 18px;
     border-top: 1px solid rgba(122, 59, 106, 0.1);
-    padding-top: 10px;
+    padding-top: 12px;
 }
 
 .detalhes-professor summary {
-    list-style: none; /* Remove a seta padrão do navegador */
+    list-style: none; 
     cursor: pointer;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--texto);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Criando nossa própria setinha */
+/* Seta customizada */
 .detalhes-professor summary::after {
     content: '↓';
     color: var(--rosa);
+    font-weight: bold;
     transition: transform 0.3s ease;
 }
 
 .detalhes-professor[open] summary::after {
-    transform: rotate(180deg); /* Gira a seta ao abrir */
+    transform: rotate(180deg); 
 }
 
 .conteudo-detalhe {
-    padding-top: 15px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    animation: fadeIn 0.4s ease; /* Efeito suave ao abrir */
-}
-
-.conteudo-detalhe ul {
-    margin-top: 10px;
-    padding-left: 20px;
-    color: var(--rosa);
+    padding-top: 18px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    animation: fadeIn 0.4s ease; 
 }
 
 @keyframes fadeIn {
@@ -301,11 +298,10 @@ h1, h2, h3, h4 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* CTA */
+/* FOOTER / CTA FINAL */
 .footer-integrado {
   background-color: #7a3b6a; 
   color: #ffffff;
-  /* Reduzi de 80px/40px para 40px no topo e 15px na base */
   padding: 70px 0 0px 0;
   margin-top: auto;
 }
@@ -319,11 +315,9 @@ h1, h2, h3, h4 {
 
 .cta-interna {
   text-align: center;
-  /* Diminuí o espaço abaixo do botão para a linha subir */
   padding-bottom: 25px;
 }
 
-/* Botão Estilo "Home" */
 .btn-experimental {
   display: inline-block;
   background-color: #ffffff;
@@ -343,18 +337,7 @@ h1, h2, h3, h4 {
 .linha-divisora {
   border: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  /* Diminuí de 30px para 15px */
   margin-bottom: 15px;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo principal */
-    align-items: center;
-    position: relative; /* Permite que os ícones fiquem fixos na direita */
-    padding: 20px 0;
-    font-size: 0.9rem;
-    min-height: 10px 0; /* Garante altura para não achatar */
 }
 
 .footer-bottom {
@@ -365,70 +348,47 @@ h1, h2, h3, h4 {
     padding: 20px 0;
 }
 
-/* Criamos um espaço vazio na esquerda para equilibrar com os ícones da direita */
 .footer-bottom::before {
     content: "";
     flex: 1;
 }
 
 .footer-bottom p {
-    flex: 2; /* Ocupa o dobro do espaço para garantir a centralização */
+    flex: 2; 
     text-align: center;
     margin: 0;
 }
 
 .social-icons {
-    flex: 1; /* Ocupa o mesmo espaço que o ::before */
+    flex: 1; 
     display: flex;
-    justify-content: flex-end; /* Empurra os ícones para o fim da direita */
+    justify-content: flex-end; 
     gap: 20px;
 }
 
-/* Mantendo seus ajustes de tamanho dos ícones */
 .social-icons img {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
 }
 
 .social-icons a[aria-label="Facebook"] {
-    transform: translateY(-1.5px); /* Sobe o ícone levemente para compensar o peso visual */
+    transform: translateY(-1.5px); 
 }
-
 
 .social-icons a:hover img {
   transform: scale(1.1);
 }
 
-
-.btn-principal-home {
-    display: inline-block;
-    background-color: var(--rosa); /* #c06aa5 */
-    color: #ffffff;
-    padding: 1.2rem 3rem;
-    border-radius: 50px; /* Botão arredondado da home */
-    text-decoration: none;
-    font-weight: 200;
-    font-size: 1.1rem;
-    box-shadow: 0 8px 20px rgba(192, 106, 165, 0.3);
-    transition: all 0.3s ease;
-}
-
-.btn-principal-home:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(192, 106, 165, 0.5);
-    background-color: #a85a90;
-}
-
+/* RESPONSIVO */
 @media (max-width: 900px) {
-
   .cards-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .hero {
-    min-height: auto;
-    padding: 100px 0;
+    min-height: 50vh;
     background-position: center;
     background-size: cover;
   }
@@ -436,21 +396,46 @@ h1, h2, h3, h4 {
   .hero-text {
     margin-right: 0;
     transform: none;
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
   }
 
   .footer-container {
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
 
   .footer-nav {
     flex-wrap: wrap;
     justify-content: center;
     height: auto;
+    gap: 14px;
   }
 
   .foto {
-    height: 300px;
+    height: 350px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
   }
 
+  .footer-bottom::before {
+    display: none;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
