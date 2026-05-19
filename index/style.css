@@ -386,7 +386,7 @@ h1, h2, h3, h4 {
 }
 
 .logo-footer-main img {
-    max-width: 250px; /* Ajuste para o tamanho que você preferir */
+    max-width: 350px; /* Ajuste para o tamanho que você preferir */
     height: auto;
     display: block; /* Remove espaços fantasmas embaixo da imagem */
 }
@@ -400,8 +400,8 @@ h1, h2, h3, h4 {
 }
 
 .social-icons img {
-  width: 24px; /* Tamanho fixo para não desalinharem */
-  height: 24px;
+  width: 34px; /* Tamanho fixo para não desalinharem */
+  height: 34px;
   object-fit: contain;
 }
 
@@ -421,7 +421,7 @@ h1, h2, h3, h4 {
 }
 
 .info-item img {
-  width: 18px;
+  width: 20px;
   height: auto;
 }
 

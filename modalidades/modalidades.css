@@ -108,6 +108,9 @@ h1, h2, h3, h4 {
 .footer-container {
     max-width: 1400px;
     margin: 0 auto;
+    display: flex; /* <-- Isso organiza logo e menu lado a lado */
+    justify-content: space-between;
+    align-items: center;
     padding: 0px 40px;
 }
 
@@ -116,10 +119,10 @@ h1, h2, h3, h4 {
 }
 
 .footer-nav {
-  display: flex;
-  align-items: center; /* Garante que o texto fique no meio da linha da imagem */
-  gap: 28px;
-  height: 80px; /* Mesma altura que definimos para a logo */
+    display: flex;
+    align-items: center;
+    gap: 23px; /* Espaço entre os links aumentado */
+    height: 80px; /* Acompanha a altura máxima da logo */
 }
 
 .footer-nav a {
@@ -164,10 +167,9 @@ h1, h2, h3, h4 {
 }
 
 .hero-text {
-    max-width: 650px; /* 520 * 1.25 */
-    margin-right: auto;
-    margin-left: 20px;
-    transform: translateY(-80px); /* Ajustado para o novo min-height */
+    max-width: 650px;
+    margin-right: 665px; /* Empurra o texto para a esquerda, longe da bailarina */
+    transform: translateY(-120px); /* Mantém a altura correta */
 }
 
 .hero-text h1 {
@@ -270,11 +272,10 @@ h1, h2, h3, h4 {
 
 .coluna-cards {
     width: 100%;
-    max-width: 1250px; /* 1000 * 1.25 */
-    margin: 0 auto;
+    max-width: 1250px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 32px; /* Espaço maior entre um card e outro */
 }
 
 /* O "QUADRADINHO" (CARD) REFEITO */
@@ -282,11 +283,11 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff !important; /* Fundo branco sólido */
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 20px 30px rgba(0, 0, 1, 0.15) !important;
-    transition: all 0.3s ease; /* Animação suave */
+    background-color: #ffffff !important;
+    border-radius: 25px; /* Bordas mais arredondadas */
+    padding: 25px; /* Devolve o "ar" dentro do card */
+    box-shadow: 0 25px 38px rgba(0, 0, 1, 0.15) !important;
+    transition: all 0.3s ease;
     border: 1px solid rgba(192, 106, 165, 0.05);
 }
 
@@ -301,16 +302,16 @@ h1, h2, h3, h4 {
 .card-content-left {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 32px; /* Afasta o ícone do texto */
 }
 
 /* TAMANHO DO ÍCONE CORRIGIDO */
 /* TAMANHO DO ÍCONE CORRIGIDO */
 .card-icon-small {
-    width: 90px;
-    height: 90px; /* Travamos a altura para ser igual à largura */
-    object-fit: contain; /* Garante que a ilustração não distorça */
-    flex-shrink: 0; /* Impede que o ícone "esmague" se o texto for muito longo */
+    width: 115px; /* O ícone volta a ficar grande e chamativo */
+    height: 115px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .card-horizontal .texts h3 {
@@ -492,8 +493,8 @@ h1, h2, h3, h4 {
 
 /* Mantendo seus ajustes de tamanho dos ícones */
 .social-icons img {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
 }
 
