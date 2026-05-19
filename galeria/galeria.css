@@ -4,6 +4,10 @@
   --texto: #7a3b6a;
 }
 
+html {
+  font-size: 125%; /* Substitui o zoom de forma limpa e nativa */
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -14,23 +18,21 @@
 /* FUNDO GLOBAL */
 body {
     font-family: 'Inter', sans-serif;
-    /* O gradiente agora só aparece nas laterais */
     background: linear-gradient(90deg, #894589 0%, #eebbea 20%, #eebbea 80%, #894589 100%);
     background-attachment: fixed;
     color: var(--texto);
     margin: 0;
     padding: 0;
-    zoom: 1.25;
 }
 
-/* O MIOLO DO SITE (Os 1200px centrais) */
+/* O MIOLO DO SITE (Ajustado para 1500px acompanhando as outras páginas) */
 .page {
     background-color: #ffffff;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     position: relative;
     box-shadow: 0 0 100px rgba(0,0,0,0.1);
-    display: flex; /* Ajuda a esticar o conteúdo */
+    display: flex; 
     flex-direction: column;
     min-height: 100vh;
 }
@@ -43,12 +45,11 @@ h1, h2, h3, h4 {
 
 /* CONTAINER */
 .container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0px 20px;
-  box-shadow: 20px 0 50px -20px rgba(192, 106, 165, 0.05), 
-               -20px 0 50px -20px rgba(192, 106, 165, 0.05);
 }
+
 .about-title {
    font-size: 2.4rem;
   margin-bottom: 24px;
@@ -61,14 +62,13 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   max-width: 1100px;
 }
+
 .about-link {
   display: inline-block;
   margin-top: 20px;
-
   color: var(--rosa);
   text-decoration: none;
   font-weight: 500;
-
   position: relative;
   padding-bottom: 6px;
 }
@@ -78,11 +78,9 @@ h1, h2, h3, h4 {
   position: absolute;
   left: 0;
   bottom: 0;
-
   width: 0%;
   height: 2px;
   background-color: currentColor;
-
   transition: width 0.3s ease;
 }
 
@@ -101,47 +99,47 @@ h1, h2, h3, h4 {
   color: var(--rosa);
 }
 
-
+/* HEADER (Footer-Top) */
 .footer-top {
     display: block !important;
-    background-color: #7a3b6a; /* Cor suave de fundo */
+    background-color: #7a3b6a; 
     border-bottom: 1px solid rgba(122, 59, 106, 0.1);
     padding: 20px 0;
 }
 
 .footer-container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 40px;
 }
 
 .footer-logo img {
-    max-height: 80px; /* Tamanho ideal para o logo Isadora Martén */
+    max-height: 100px; /* Redimensionado proporcionalmente */
 }
 
 .footer-nav {
   display: flex;
-  align-items: center; /* Garante que o texto fique no meio da linha da imagem */
-  gap: 28px;
-  height: 80px; /* Mesma altura que definimos para a logo */
+  align-items: center; 
+  gap: 23px; /* Espaço entre links reajustado */
+  height: 100px; 
 }
 
 .footer-nav a {
     text-decoration: none;
-    color: #ffffff; /* Cor roxa original da marca para melhor contraste */
+    color: #ffffff; 
     font-weight: 500;
     font-size: 1rem;
     transition: 0.3s;
-    line-height: 1; /* Trava a altura da linha do texto */
-    padding: 5px 0; /* Espaço igual em cima e embaixo */
+    line-height: 1; 
+    padding: 5px 0; 
 }
 
 .footer-nav a:hover, 
 .footer-nav a.active {
-    color: #eebbea; /* Mantém o rosa de destaque ao interagir */
+    color: #eebbea; 
 }
 
 .footer-nav a.active {
@@ -149,32 +147,27 @@ h1, h2, h3, h4 {
     padding-bottom: 5px;
 }
 
-.footer-nav a.active::after {
-  width: 100%;
-}
-
 /* HERO */
-
-.hero, .historia-full, .section, .estrutura-full, .cta-unificado {
-    background-color: transparent; /* Elas herdam o branco do .page */
+.hero, .galeria-secao, .footer-integrado {
+    background-color: transparent; 
 }
 
 .hero {
-    min-height: 60vh;
+    min-height: 73vh;
     display: flex;
     align-items: center;
-    /* Isso cria um fundo que vai do branco para o rosa claro até o fim da tela */
     background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
     background-image: url("/img/bailarina-bg.webp");
     background-repeat: no-repeat;
-    background-position: 55% center; /* Trava ela mais para a direita */
-    background-size: 1200px; /* Trava o tamanho em pixels para não quebrar no zoom */
+    background-size: 1500px; 
+    background-position: center right;
 }
 
 .hero-text {
-  max-width: 520px;
-   margin-right: 620px;
-   transform: translateY(-120px);
+    max-width: 650px;
+    margin-right: 775px; /* Evita que o texto encavale com a bailarina */
+    margin-left: 20px;
+    transform: translateY(-80px);
 }
 
 .hero-text h1 {
@@ -187,134 +180,128 @@ h1, h2, h3, h4 {
   margin-bottom: 1.5rem;
 }
 
-
 /* FILTROS */
 .filters {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 15px;       /* Espaçamento entre os botões */
+  margin: 50px 0;  /* Espaço acima e abaixo do bloco de filtros */
 }
 
 .filter {
-  padding: 8px 18px;
-  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;     /* Aumenta o tamanho do texto do botão */
+  font-weight: 500;       /* Deixa as letras ligeiramente mais encorpadas */
+  padding: 14px 28px;     /* Engorda o botão (cima/baixo e lados) */
+  border-radius: 30px;    /* Mantém o visual arredondado proporcional */
   border: none;
   background: #f1cce4;
   color: #7a3b6a;
   cursor: pointer;
+  transition: all 0.2s ease; /* Efeito suave ao passar o mouse */
 }
 
+.filter:hover {
+  background: #e5b3d5;
+  transform: translateY(-2px); /* Leve subida charmosa */
+}
+
+/* Botão ativo/selecionado */
 .filter.active {
   background: #d18abc;
   color: white;
+  box-shadow: 0 4px 12px rgba(122, 59, 106, 0.2); /* Destaca o ativo */
 }
 
-/* Ajuste do Grid para aceitar os Cards */
+/* SEÇÃO DA GALERIA */
+.galeria-secao {
+  text-align: center;
+}
+
+.galeria-secao h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.galeria-secao p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* GRID DA GALERIA */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 20px 0;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Aumentado o tamanho mínimo das fotos */
+    gap: 32px; /* Mais espaço entre as fotos */
+    padding: 30px 0 80px 0;
 }
 
-/* Estilo do Card (Mesmo que você já tinha, mas garantindo consistência) */
+/* CARDS DE FOTO */
 .card {
     background: #fff;
-    border-radius: 15px;
-    padding: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 6px 20px rgba(122, 59, 106, 0.08);
     cursor: zoom-in;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    border: 1px solid rgba(192, 106, 165, 0.05);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(122, 59, 106, 0.15);
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 250px; /* Fotos maiores e mais nítidas no grid */
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
 }
 
 .card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
     color: var(--texto);
 }
 
 .card p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #888;
 }
 
-/* Lightbox - Z-index bem alto para ficar na frente de tudo */
-.lightbox {
-    z-index: 99999 !important;
-}
-
-/* GALERIA */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  padding: 0 60px 60px;
-}
-
-.card {
-  border-radius: 20px;
-  padding: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform .3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 8px;
-}
-
+/* LIGHTBOX (Visualizador de Imagem Expandida) */
 .lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Fundo bem escuro para focar na foto */
+    background: rgba(0, 0, 0, 0.92); 
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: 10000;
+    z-index: 99999 !important; /* Totalmente prioritário na tela */
 }
 
-/* Quando a lightbox estiver aberta */
 .lightbox.active {
     opacity: 1;
     pointer-events: auto;
 }
 
 .lightbox-img {
-    max-width: 90%;
+    max-width: 85%;
     max-height: 85vh;
+    object-fit: contain; 
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    transform: scale(0.9);
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    transform: scale(0.92);
     transition: transform 0.3s ease;
 }
 
@@ -324,12 +311,18 @@ h1, h2, h3, h4 {
 
 .close-lightbox {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 25px;
+    right: 35px;
     color: white;
-    font-size: 40px;
+    font-size: 45px;
     cursor: pointer;
     font-family: Arial, sans-serif;
+    z-index: 100002;
+    transition: transform 0.2s;
+}
+
+.close-lightbox:hover {
+  transform: scale(1.1);
 }
 
 .nav-btn {
@@ -339,46 +332,30 @@ h1, h2, h3, h4 {
     background: rgba(255, 255, 255, 0.15);
     color: white;
     border: none;
-    
-    /* Trava o tamanho para não achatar */
-    width: 60px;
-    height: 60px;
-    
+    width: 65px; /* Ligeiramente aumentado para facilitar cliques */
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s;
     border-radius: 50%;
-    font-size: 24px;
-    z-index: 10001;
+    font-size: 26px;
+    z-index: 100001;
 }
 
 .nav-btn:hover {
-   background: var(--rosa);
+    background: var(--rosa);
     transform: translateY(-50%) scale(1.1);
 }
 
-.prev { left: 30px; }
-.next { right: 30px; }
+.prev { left: 35px; }
+.next { right: 35px; }
 
-/* Ajuste na imagem para não ficar por cima das setas em telas pequenas */
-.lightbox-img {
-    max-width: 85%;
-    max-height: 85vh;
-    object-fit: contain; /* Mantém a proporção da foto */
-}
-
-.close-lightbox {
-    z-index: 10002;
-}
-
-/* CTA */
+/* CTA FINAL / INTEGRADO */
 .footer-integrado {
   background-color: #7a3b6a; 
   color: #ffffff;
-  /* Reduzi de 80px/40px para 40px no topo e 15px na base */
   padding: 70px 0 0px 0;
   margin-top: auto;
 }
@@ -392,11 +369,9 @@ h1, h2, h3, h4 {
 
 .cta-interna {
   text-align: center;
-  /* Diminuí o espaço abaixo do botão para a linha subir */
   padding-bottom: 25px;
 }
 
-/* Botão Estilo "Home" */
 .btn-experimental {
   display: inline-block;
   background-color: #ffffff;
@@ -416,18 +391,7 @@ h1, h2, h3, h4 {
 .linha-divisora {
   border: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  /* Diminuí de 30px para 15px */
   margin-bottom: 15px;
-}
-
-.footer-bottom {
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo principal */
-    align-items: center;
-    position: relative; /* Permite que os ícones fiquem fixos na direita */
-    padding: 20px 0;
-    font-size: 0.9rem;
-    min-height: 10px 0; /* Garante altura para não achatar */
 }
 
 .footer-bottom {
@@ -438,70 +402,44 @@ h1, h2, h3, h4 {
     padding: 20px 0;
 }
 
-/* Criamos um espaço vazio na esquerda para equilibrar com os ícones da direita */
 .footer-bottom::before {
     content: "";
     flex: 1;
 }
 
 .footer-bottom p {
-    flex: 2; /* Ocupa o dobro do espaço para garantir a centralização */
+    flex: 2; 
     text-align: center;
     margin: 0;
 }
 
 .social-icons {
-    flex: 1; /* Ocupa o mesmo espaço que o ::before */
+    flex: 1; 
     display: flex;
-    justify-content: flex-end; /* Empurra os ícones para o fim da direita */
+    justify-content: flex-end; 
     gap: 20px;
 }
 
-/* Mantendo seus ajustes de tamanho dos ícones */
 .social-icons img {
-    width: 28px;
-    height: 28px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
 }
 
-
 .social-icons a[aria-label="Facebook"] {
-    transform: translateY(-1.5px); /* Sobe o ícone levemente para compensar o peso visual */
+    transform: translateY(-1.5px); 
 }
-
 
 .social-icons a:hover img {
   transform: scale(1.1);
 }
 
-
-.btn-principal-home {
-    display: inline-block;
-    background-color: var(--rosa); /* #c06aa5 */
-    color: #ffffff;
-    padding: 1.2rem 3rem;
-    border-radius: 50px; /* Botão arredondado da home */
-    text-decoration: none;
-    font-weight: 200;
-    font-size: 1.1rem;
-    box-shadow: 0 8px 20px rgba(192, 106, 165, 0.3);
-    transition: all 0.3s ease;
-}
-
-.btn-principal-home:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(192, 106, 165, 0.5);
-    background-color: #a85a90;
-}
+/* RESPONSIVO */
 @media (max-width: 768px) {
-
-  body {
-    zoom: 1;
-  }
-
   .footer-container {
     flex-direction: column;
     gap: 20px;
+    text-align: center;
   }
 
   .footer-nav {
@@ -512,7 +450,7 @@ h1, h2, h3, h4 {
   }
 
   .hero {
-    min-height: 45vh;
+    min-height: 50vh;
     background-position: center;
     background-size: cover;
     padding: 40px 0;
@@ -523,6 +461,7 @@ h1, h2, h3, h4 {
     transform: none;
     text-align: center;
     max-width: 100%;
+    padding: 0 15px;
   }
 
   .hero-text h1 {
@@ -531,26 +470,26 @@ h1, h2, h3, h4 {
 
   .hero-text p {
     font-size: 1.1rem;
-    line-height: 1.5;
   }
 
   .filters {
-    flex-wrap: wrap;
-    padding: 0 20px;
     gap: 10px;
+    padding: 0 15px;
   }
 
   .filter {
     font-size: 0.9rem;
+    padding: 8px 16px;
   }
 
   .galeria-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 20px 15px;
   }
 
-  .card {
-    padding: 10px;
+  .card img {
+    height: 280px; /* Mantém uma boa proporção em telas móveis */
   }
 
   .lightbox-img {
@@ -559,18 +498,13 @@ h1, h2, h3, h4 {
   }
 
   .nav-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
+  .prev { left: 15px; }
+  .next { right: 15px; }
 
   .titulo-cta {
     font-size: 1.8rem;
@@ -586,13 +520,7 @@ h1, h2, h3, h4 {
     display: none;
   }
 
-  .footer-bottom p,
-  .social-icons {
-    flex: unset;
-  }
-
   .social-icons {
     justify-content: center;
   }
-
 }
