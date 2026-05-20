@@ -455,21 +455,19 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
-    /* Diminui a escala mais um pouco para telas pequenas */
     html { font-size: 95%; }
     
-    /* Header e Navegação */
+    /* Header e Navegação (Padronizado) */
     .footer-container { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
     .footer-nav { flex-wrap: wrap; justify-content: center; height: auto; gap: 15px; }
+    .footer-nav a { margin-left: 0; font-size: 0.95rem; }
     
-    /* Hero */
-    .hero { min-height: auto; padding: 60px 20px; background-image: none; } /* Removemos a imagem de fundo no celular para leitura limpa */
+    /* Hero com foto ativa no celular */
+    .hero { min-height: auto; padding: 80px 20px; background-size: cover; background-position: center; } 
     .hero-text h1 { font-size: 2.2rem; }
     
-    /* Estrutura de grid para os cards */
     .cards { grid-template-columns: 1fr; gap: 20px; }
     
-    /* Footer Final */
     .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .footer-right { align-items: center; text-align: center; width: 100%; }
     .footer-right .about-title { text-align: center; width: 100%; }
