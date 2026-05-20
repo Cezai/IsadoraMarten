@@ -485,20 +485,29 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
-    /* Header e Navegação (Padronizado) */
+    /* Header e Navegação Padronizados */
     .footer-container { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
     .footer-nav { flex-wrap: wrap; justify-content: center; height: auto; gap: 15px; }
     .footer-nav a { margin-left: 0; font-size: 0.95rem; }
 
-    /* Hero com foto ativa no celular */
-    .hero { min-height: auto; padding: 80px 0; background-size: cover; background-position: center; }
-    .hero-text h1 { font-size: 2rem; }
+    /* Hero Padronizado */
+    .hero { 
+        min-height: 350px; 
+        padding: 60px 20px; 
+        background-size: cover; 
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    } 
+    .hero-text { margin: 0; max-width: 100%; transform: none; text-align: center; padding: 0; }
+    .hero-text h1 { font-size: 2rem; margin-bottom: 15px; }
     .hero-text p { font-size: 1rem; line-height: 1.6; }
 
+    /* Conteúdo Específico de Agenda */
     .agenda-secao-principal { padding: 40px 15px; }
     .event-card { padding: 25px; }
     .event-card h3 { font-size: 1.3rem; }
-
     .calendar { padding: 20px; border-radius: 20px; }
     .calendar-header h3 { font-size: 1.6rem; }
     .btn-nav { font-size: 1.5rem; padding: 8px 14px; }
@@ -509,6 +518,7 @@ h1, h2, h3, h4 {
     .month-events-list { padding: 20px; }
     .event-list-item { font-size: 0.95rem; }
 
+    /* Footer CTA */
     .titulo-cta { font-size: 1.8rem; }
     .btn-experimental { width: 100%; max-width: 320px; }
     .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
