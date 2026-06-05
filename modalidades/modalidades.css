@@ -528,33 +528,30 @@ h1, h2, h3, h4 {
     background-color: #a85a90;
 }
 @media (max-width: 1024px) {
-    .hero {
-        background-position: center right;
-        background-size: cover;
-        min-height: 50vh;
-        padding: 80px 0;
-    }
-    .hero-text {
-        margin-right: 0;
-        transform: none;
-        max-width: 100%;
-        text-align: center;
-        padding: 0 20px;
-    }
-    .hero-text h1 { font-size: 2.5rem; }
-    .hero-text p { font-size: 1.2rem; }
-    }
-
+  .hero {
+    background-position: center right;
+    background-size: cover;
+    min-height: 50vh;
+    padding: 80px 0;
+  }
+  .hero-text {
+    margin-right: 0;
+    transform: none;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .hero-text h1 { font-size: 2.5rem; }
+  .hero-text p { font-size: 1.2rem; }
+}
 
 @media (max-width: 768px) {
-    html { font-size: 95%; }
-    
-    /* Header e Navegação Padronizados */
+    /* Header e Navegação Padronizados (Ref: Equipe) */
     .footer-container { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
     .footer-nav { flex-wrap: wrap; justify-content: center; height: auto; gap: 15px; }
     .footer-nav a { margin-left: 0; font-size: 0.95rem; }
-    
-    /* Hero Padronizado */
+
+    /* Hero Padronizado (Ref: Equipe) */
     .hero { 
         min-height: 350px; 
         padding: 60px 20px; 
@@ -567,7 +564,7 @@ h1, h2, h3, h4 {
     .hero-text { margin: 0; max-width: 100%; transform: none; text-align: center; padding: 0; }
     .hero-text h1 { font-size: 2rem; margin-bottom: 15px; }
     .hero-text p { font-size: 1rem; line-height: 1.6; }
-    
+
     /* Conteúdo Específico de Modalidades */
     .titulo-historia, .titulo-sessao-grande, .sub-texto-vazado, .about-title { text-align: center; transform: none; }
     .historia-grid, .estrutura-grid-nova { grid-template-columns: 1fr; gap: 25px; text-align: center; }
@@ -579,9 +576,9 @@ h1, h2, h3, h4 {
     .card-horizontal .texts h3, .card-horizontal .texts p { text-align: center; }
     .card-image-right { width: 100%; height: 200px; margin-top: 10px; }
     .img-wrapper { height: 250px; }
-    
-    /* Footer CTA */
-    .titulo-cta { font-size: 2rem; }
+
+    /* Footer CTA (Ref: Equipe) */
+    .titulo-cta { font-size: 1.8rem; }
     .btn-experimental { width: 100%; max-width: 320px; }
     .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
     .footer-bottom::before { display: none; }
@@ -590,9 +587,13 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 480px) {
-    .hero-text h1 { font-size: 1.8rem; }
+    /* Hero Padronizado (Ref: Equipe) */
+    .hero-text h1 { font-size: 1.7rem; }
+    .hero-text p { font-size: 0.95rem; }
+    
+    /* Conteúdo Específico de Modalidades */
     .modalidade-card { padding: 20px; }
-    .modalidade-card h3 { font-size: 1.25rem; }
+    .modalidade-card h3 { font-size: 1.3rem; } /* Ajustado para bater com o h3 da referência */
     .modalidade-card p { font-size: 0.9rem; }
     .btn-saiba-mais { width: 100%; text-align: center; }
 }
