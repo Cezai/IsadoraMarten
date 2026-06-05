@@ -168,24 +168,23 @@ h1, h2, h3, h4 {
 }
 
 /* HERO */
+/* HERO */
 .hero {
     min-height: 73vh;
     display: flex;
     align-items: center;
-    /* Isso cria um fundo que vai do branco para o rosa claro até o fim da tela */
     background: linear-gradient(90deg, #ffffff 50%, #fdf6fa 100%); 
     background-image: url("/img/bailarina-bg.webp");
     background-repeat: no-repeat;
-    background-position: 55% center; /* Trava ela mais para a direita */
-    background-size: 1500px; /* Trava o tamanho em pixels para não quebrar no zoom */
+    background-size: 1500px; /* Mantém o tamanho padrão fixo */
+    background-position: center right; /* Corrigido: igual à Equipe */
 }
 
 .hero-text {
-   /* 520 * 1.25 = 650px */
-   max-width: 650px; 
-   /* 620 * 1.25 = 775px */
-   margin-right: 775px;
-   transform: translateY(-120px);
+    max-width: 650px; 
+    margin-right: 775px;
+    margin-left: 20px; /* Adicionado para alinhar perfeitamente */
+    transform: translateY(-80px); /* Corrigido: mesma altura de subida da Equipe */
 }
 
 .hero-text h1 {

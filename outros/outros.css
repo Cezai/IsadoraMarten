@@ -128,10 +128,10 @@ h1, h2, h3, h4 {
 }
 
 .hero-text {
-  max-width: 650px;
-  margin-right: 775px;
-  margin-left: 20px;
-  padding: 40px 0;
+    max-width: 650px;
+    margin-right: 775px;
+    margin-left: 20px;
+    transform: translateY(-80px); /* Adicionado: remove o padding antigo e unifica com a Equipe */
 }
 
 .hero-text h1 {
