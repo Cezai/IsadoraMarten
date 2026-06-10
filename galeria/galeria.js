@@ -20,7 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { inicio: 147, fim: 153, titulo: "Carnaval", categoria: "aulas" },
         { inicio: 154, fim: 155, titulo: "Páscoa", categoria: "aulas" },
         { inicio: 156, fim: 182, titulo: "Final de Ano Dançante", categoria: "colonia" },
-        { inicio: 183, fim: 183, titulo: "Cultura Talent - Theatro Guarany (2026)", categoria: "eventos" }
+        { inicio: 183, fim: 183, titulo: "Cultura Talent - Theatro Guarany (2026)", categoria: "apresentacoes" },
+        { inicio: 184, fim: 185, titulo: "22º Bagé em Dança", categoria: "apresentacoes" },
+        { inicio: 186, fim: 187, titulo: "2ª Mostra de Dança de Pelotas (2026)", categoria: "festivais" },
+        { inicio: 188, fim: 189, titulo: "Workshop Jazz Funk (2026)", categoria: "eventos" }
     ];
 
     // Esse código vai ler a sua tabela acima e criar os cards certinhos
