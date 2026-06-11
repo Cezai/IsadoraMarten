@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     const galeriaGrid = document.getElementById('galeria-grid');
 
-    // Aqui está a sua "Tabela"! É só mudar o que está entre aspas!
     const lotesDeFotos = [
         { inicio: 1, fim: 81, titulo: "A Pequena Sereia e o Fundo do mar", categoria: "espetaculos" },
         { inicio: 82, fim: 103, titulo: "12º Dança Arroio Grande", categoria: "festivais" },
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { inicio: 117, fim: 121, titulo: "Festa Junina", categoria: "aulas" },
         { inicio: 122, fim: 124, titulo: "Workshop Jazz", categoria: "eventos" },
         { inicio: 125, fim: 140, titulo: "Aulões 2026", categoria: "eventos" },
-        { inicio: 141, fim: 141, titulo: "115 anos do Clube Brilhante", categoria: "apresentacoes" }, // Foto única
+        { inicio: 141, fim: 141, titulo: "115 anos do Clube Brilhante", categoria: "apresentacoes" },
         { inicio: 142, fim: 146, titulo: "Aulões Abertos 2025", categoria: "eventos" },
         { inicio: 147, fim: 153, titulo: "Carnaval", categoria: "aulas" },
         { inicio: 154, fim: 155, titulo: "Páscoa", categoria: "aulas" },
@@ -26,12 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { inicio: 188, fim: 189, titulo: "Workshop Jazz Funk (2026)", categoria: "eventos" }
     ];
 
-    // Esse código vai ler a sua tabela acima e criar os cards certinhos
     lotesDeFotos.forEach(lote => {
         for (let i = lote.inicio; i <= lote.fim; i++) {
             const card = document.createElement('div');
             
-            // Adiciona a classe 'card' e a categoria (ex: 'espetaculos') para o filtro funcionar
             card.classList.add('card', lote.categoria);
 
             card.innerHTML = `
@@ -43,12 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
             galeriaGrid.appendChild(card);
         }
     });
+
     // ==========================================
     // 2. SELEÇÃO DE ELEMENTOS PÓS-CRIAÇÃO
     // ==========================================
     const buttons = document.querySelectorAll(".filter");
     const cards = Array.from(document.querySelectorAll(".card"));
     const links = document.querySelectorAll(".footer-nav a");
+    const premiacoesSection = document.getElementById("premiacoes-section"); // NOVO!
     
     let visibleCards = [...cards];
     let currentIndex = 0;
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 4. SISTEMA DE FILTROS
+    // 4. SISTEMA DE FILTROS E PREMIAÇÕES
     // ==========================================
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -73,6 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const filter = btn.dataset.filter;
             
+            // Controle da aba de Premiações (Aparece SOMENTE em Festivais)
+            if (filter === "festivais") {
+                premiacoesSection.style.display = "block";
+            } else {
+                premiacoesSection.style.display = "none";
+            }
+
             cards.forEach(card => {
                 if (filter === "all" || card.classList.contains(filter)) {
                     card.style.display = "block";
@@ -106,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.getElementById('nextBtn');
 
     // ==========================================
-    // 6. FUNÇÕES DA LIGHTBOX (Abrir e Passar)
+    // 6. FUNÇÕES DA LIGHTBOX
     // ==========================================
     function updateLightbox(index) {
         if (visibleCards.length === 0) return;
@@ -117,11 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const imgSource = visibleCards[currentIndex].querySelector('img').src;
         lightboxImg.src = imgSource; 
         const nextIndex = (currentIndex + 1) % visibleCards.length;
-const preloadImg = new Image();
-preloadImg.src = visibleCards[nextIndex].querySelector('img').src;
+        const preloadImg = new Image();
+        preloadImg.src = visibleCards[nextIndex].querySelector('img').src;
     }
 
-    // Evento de clique na Galeria (escuta os cards que criamos lá em cima)
     galeriaGrid.addEventListener('click', (e) => {
         const clickedCard = e.target.closest('.card');
         if (clickedCard) {
@@ -148,5 +153,4 @@ preloadImg.src = visibleCards[nextIndex].querySelector('img').src;
     });
 });
 
-document.getElementById("ano-atual").textContent =
-  new Date().getFullYear();
+document.getElementById("ano-atual").textContent = new Date().getFullYear();

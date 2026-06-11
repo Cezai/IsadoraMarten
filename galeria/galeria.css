@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 125%; /* Substitui o zoom de forma limpa e nativa */
+  font-size: 125%; 
 }
 
 /* RESET */
@@ -25,7 +25,7 @@ body {
     padding: 0;
 }
 
-/* O MIOLO DO SITE (Ajustado para 1500px acompanhando as outras páginas) */
+/* O MIOLO DO SITE */
 .page {
     background-color: #ffffff;
     max-width: 1500px;
@@ -57,7 +57,6 @@ h1, h2, h3, h4 {
 }
 
 .about-text {
-  max-width: 600px;
   line-height: 1.6;
   margin: 0 auto;
   max-width: 1100px;
@@ -117,13 +116,13 @@ h1, h2, h3, h4 {
 }
 
 .footer-logo img {
-    max-height: 100px; /* Redimensionado proporcionalmente */
+    max-height: 100px;
 }
 
 .footer-nav {
   display: flex;
   align-items: center; 
-  gap: 23px; /* Espaço entre links reajustado */
+  gap: 23px;
   height: 100px; 
 }
 
@@ -165,7 +164,7 @@ h1, h2, h3, h4 {
 
 .hero-text {
     max-width: 650px;
-    margin-right: 775px; /* Evita que o texto encavale com a bailarina */
+    margin-right: 775px; 
     margin-left: 20px;
     transform: translateY(-80px);
 }
@@ -185,33 +184,32 @@ h1, h2, h3, h4 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;       /* Espaçamento entre os botões */
-  margin: 50px 0;  /* Espaço acima e abaixo do bloco de filtros */
+  gap: 15px; 
+  margin: 50px 0; 
 }
 
 .filter {
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;     /* Aumenta o tamanho do texto do botão */
-  font-weight: 500;       /* Deixa as letras ligeiramente mais encorpadas */
-  padding: 14px 28px;     /* Engorda o botão (cima/baixo e lados) */
-  border-radius: 30px;    /* Mantém o visual arredondado proporcional */
+  font-size: 0.85rem; 
+  font-weight: 500; 
+  padding: 14px 28px; 
+  border-radius: 30px; 
   border: none;
   background: #f1cce4;
   color: #7a3b6a;
   cursor: pointer;
-  transition: all 0.2s ease; /* Efeito suave ao passar o mouse */
+  transition: all 0.2s ease;
 }
 
 .filter:hover {
   background: #e5b3d5;
-  transform: translateY(-2px); /* Leve subida charmosa */
+  transform: translateY(-2px); 
 }
 
-/* Botão ativo/selecionado */
 .filter.active {
   background: #d18abc;
   color: white;
-  box-shadow: 0 4px 12px rgba(122, 59, 106, 0.2); /* Destaca o ativo */
+  box-shadow: 0 4px 12px rgba(122, 59, 106, 0.2); 
 }
 
 /* SEÇÃO DA GALERIA */
@@ -229,12 +227,95 @@ h1, h2, h3, h4 {
   margin-bottom: 30px;
 }
 
+/* ========================================= */
+/* CSS DA NOVA ÁREA DE PREMIAÇÕES            */
+/* ========================================= */
+#premiacoes-section {
+    background: linear-gradient(135deg, #fdf6fa 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(192, 106, 165, 0.2);
+    box-shadow: 0 15px 35px rgba(122, 59, 106, 0.05);
+    text-align: left;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.premiacoes-title {
+    font-size: 2rem;
+    color: var(--texto);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.premiacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.premio-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    border-left: 5px solid var(--rosa);
+}
+
+.premio-card.primeiro { border-left-color: #ffd700; } /* Dourado */
+.premio-card.segundo { border-left-color: #c0c0c0; }  /* Prata */
+.premio-card.destaque { border-left-color: var(--rosa); } /* Destaque Rosa da marca */
+
+.premio-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--texto);
+    font-weight: 600;
+}
+
+.premio-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.premio-card li {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(192, 106, 165, 0.2);
+}
+
+.premio-card li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.premio-card strong {
+    display: block;
+    color: var(--texto);
+    font-size: 1.05rem;
+    margin-bottom: 3px;
+}
+
+.premio-card span {
+    display: block;
+    color: #666;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
 /* GRID DA GALERIA */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Aumentado o tamanho mínimo das fotos */
-    gap: 32px; /* Mais espaço entre as fotos */
-    padding: 30px 0 80px 0;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 32px; 
+    padding: 10px 0 80px 0;
 }
 
 /* CARDS DE FOTO */
@@ -256,7 +337,7 @@ h1, h2, h3, h4 {
 
 .card img {
     width: 100%;
-    height: 250px; /* Fotos maiores e mais nítidas no grid */
+    height: 250px; 
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 12px;
@@ -273,7 +354,7 @@ h1, h2, h3, h4 {
     color: #888;
 }
 
-/* LIGHTBOX (Visualizador de Imagem Expandida) */
+/* LIGHTBOX */
 .lightbox {
     position: fixed;
     top: 0;
@@ -287,7 +368,7 @@ h1, h2, h3, h4 {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: 99999 !important; /* Totalmente prioritário na tela */
+    z-index: 99999 !important; 
 }
 
 .lightbox.active {
@@ -332,7 +413,7 @@ h1, h2, h3, h4 {
     background: rgba(255, 255, 255, 0.15);
     color: white;
     border: none;
-    width: 65px; /* Ligeiramente aumentado para facilitar cliques */
+    width: 65px; 
     height: 65px;
     display: flex;
     align-items: center;
@@ -434,6 +515,7 @@ h1, h2, h3, h4 {
   transform: scale(1.1);
 }
 
+/* RESPONSIVIDADE UNIFICADA */
 @media (max-width: 1024px) {
   .hero {
     background-position: center right;
@@ -453,43 +535,55 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 768px) {
-    /* Header e Navegação Padronizados */
-    .footer-container { flex-direction: column; gap: 20px; padding: 20px; text-align: center; }
-    .footer-nav { flex-wrap: wrap; justify-content: center; height: auto; gap: 15px; }
-    .footer-nav a { margin-left: 0; font-size: 0.95rem; }
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    height: auto;
+  }
+  .footer-nav a { margin-left: 0; font-size: 0.95rem; }
   
-    /* Hero Padronizado */
-    .hero { 
-        min-height: 350px; 
-        padding: 60px 20px; 
-        background-size: cover; 
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    } 
-    .hero-text { margin: 0; max-width: 100%; transform: none; text-align: center; padding: 0; }
-    .hero-text h1 { font-size: 2rem; margin-bottom: 15px; }
-    .hero-text p { font-size: 1rem; line-height: 1.6; }
+  .hero {
+    min-height: auto;
+    background-image: none; 
+    padding: 70px 0;
+  }
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 1rem; line-height: 1.6; }
 
-    /* Conteúdo Específico da Galeria */
-    .filters { gap: 10px; padding: 0 15px; }
-    .filter { font-size: 0.9rem; padding: 8px 16px; }
-    .galeria-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px 15px; }
-    .card img { height: 280px; }
-    .lightbox-img { max-width: 95%; max-height: 75vh; }
-    .nav-btn { width: 50px; height: 50px; font-size: 20px; }
-    .prev { left: 15px; }
-    .next { right: 15px; }
+  .filters { gap: 10px; padding: 0 15px; }
+  .filter { font-size: 0.9rem; padding: 8px 16px; }
 
-    /* Footer CTA */
-    .titulo-cta { font-size: 1.8rem; }
-    .btn-experimental { width: 100%; max-width: 320px; }
-    .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
-    .footer-bottom::before { display: none; }
-    .footer-bottom p { flex: unset; }
-    .social-icons { justify-content: center; }
+  #premiacoes-section { padding: 20px; }
+  .premiacoes-title { font-size: 1.6rem; }
+  .premiacoes-grid { grid-template-columns: 1fr; }
+
+  .galeria-grid { 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+    padding: 20px 15px; 
+  }
+  .card img { height: 280px; }
+  
+  .lightbox-img { max-width: 95%; max-height: 75vh; }
+  .nav-btn { width: 50px; height: 50px; font-size: 20px; }
+  .prev { left: 15px; }
+  .next { right: 15px; }
+
+  .titulo-cta { font-size: 1.8rem; }
+  .btn-experimental { width: 100%; max-width: 320px; }
+  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+  .footer-bottom::before { display: none; }
+  .footer-bottom p { flex: unset; }
+  .social-icons { justify-content: center; }
 }
+
 @media (max-width: 480px) {
   .hero-text h1 { font-size: 1.7rem; }
   .hero-text p { font-size: 0.95rem; }
