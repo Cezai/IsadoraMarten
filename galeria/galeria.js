@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".filter");
     const cards = Array.from(document.querySelectorAll(".card"));
     const links = document.querySelectorAll(".footer-nav a");
-    const premiacoesSection = document.getElementById("premiacoes-section"); // NOVO!
+    const premiacoesSection = document.getElementById("premiacoes-section");
+    const btnPremiacoes = document.getElementById("btn-premiacoes"); // Botão novo
     
     let visibleCards = [...cards];
     let currentIndex = 0;
@@ -67,26 +68,39 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
+            // Remove active class from all
             buttons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
 
             const filter = btn.dataset.filter;
             
-            // Controle da aba de Premiações (Aparece SOMENTE em Festivais)
-            if (filter === "festivais") {
-                premiacoesSection.style.display = "block";
+            // Regra 1: Mostrar ou esconder o botão "Premiações" no menu de filtros
+            // Ele só aparece se o usuário clicar em "Festivais" ou nele mesmo
+            if (filter === "festivais" || filter === "premiacoes") {
+                btnPremiacoes.style.display = "inline-block";
             } else {
-                premiacoesSection.style.display = "none";
+                btnPremiacoes.style.display = "none";
             }
 
-            cards.forEach(card => {
-                if (filter === "all" || card.classList.contains(filter)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-            visibleCards = cards.filter(card => card.style.display !== "none");
+            // Regra 2: Alternar entre o GRID DE FOTOS e a SEÇÃO DE PREMIAÇÕES
+            if (filter === "premiacoes") {
+                // Se clicou no botão premiações: esconde as fotos e mostra as seções de prêmios
+                premiacoesSection.style.display = "block";
+                galeriaGrid.style.display = "none";
+            } else {
+                // Se for outro filtro: esconde a área de prêmios e volta com o grid de fotos
+                premiacoesSection.style.display = "none";
+                galeriaGrid.style.display = "grid";
+
+                cards.forEach(card => {
+                    if (filter === "all" || card.classList.contains(filter)) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+                visibleCards = cards.filter(card => card.style.display !== "none");
+            }
         });
     });
 

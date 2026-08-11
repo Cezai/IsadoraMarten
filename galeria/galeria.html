@@ -56,8 +56,10 @@
     <button class="filter active" data-filter="all">Todos</button>
     <button class="filter" data-filter="espetaculos">Espetáculos</button>
     <button class="filter" data-filter="festivais">Festivais</button>
+    <!-- Botão de premiações oculto por padrão. Só aparece quando clica em festivais -->
+    <button class="filter" id="btn-premiacoes" data-filter="premiacoes" style="display: none;">Premiações</button>
     <button class="filter" data-filter="apresentacoes">Apresentações</button>
-    <button class="filter" data-filter="eventos">⁠Eventos</button>
+    <button class="filter" data-filter="eventos">Eventos</button>
     <button class="filter" data-filter="aulas">Aulas Temáticas</button>
     <button class="filter" data-filter="colonia">Colônia de Férias</button>
   </section>
@@ -67,43 +69,72 @@
     <h2>Nossa Galeria</h2>
     <p>Confira os momentos mágicos do nosso studio.</p>
     
+    <!-- NOVA ESTRUTURA DE PREMIAÇÕES POR EVENTO -->
     <div id="premiacoes-section" style="display: none;">
-      <h3 class="premiacoes-title"> Nossas Premiações em Festivais</h3>
-      <div class="premiacoes-grid">
-        
-        <div class="premio-card primeiro">
-          <h4>1º LUGAR</h4>
-          <ul>
-            <li><strong>Ruptura</strong><span>Jazz Juvenil Grupo</span></li>
-            <li><strong>Daqui Pra Frente</strong><span>Jazz Adulto Solo Masculino</span></li>
-          </ul>
-        </div>
+      
+      <!-- EVENTO 1 -->
+      <div class="evento-premiacao">
+        <h3 class="evento-title">🏆 12º Dança Arroio Grande</h3>
+        <div class="premiacoes-grid">
+          
+          <div class="premio-card primeiro">
+            <h4>1º LUGAR</h4>
+            <ul>
+              <li><strong>Ruptura</strong><span>Jazz Juvenil Grupo</span></li>
+              <li><strong>Daqui Pra Frente</strong><span>Jazz Adulto Solo Masculino</span></li>
+            </ul>
+          </div>
 
-        <div class="premio-card segundo">
-          <h4>2º LUGAR</h4>
-          <ul>
-            <li><strong>Inefável</strong><span>Jazz Juvenil Grupo</span></li>
-            <li><strong>Em Mim, o que Ficou</strong><span>Jazz Juvenil Solo Feminino</span></li>
-            <li><strong>Entre Três</strong><span>Jazz Juvenil Conjunto</span></li>
-            <li><strong>Corpos em Turno</strong><span>Jazz Juvenil Conjunto</span></li>
-            <li><strong>Carrego em Mim a Prova de Que Você Existiu</strong><span>Jazz Adulto Solo Feminino</span></li>
-            <li><strong>O Sopro das Algas</strong><span>Estilo Livre Juvenil Grupo</span></li>
-            <li><strong>Nascidos do Coração do Oceano</strong><span>Jazz Juvenil Grupo</span></li>
-          </ul>
-        </div>
+          <div class="premio-card segundo">
+            <h4>2º LUGAR</h4>
+            <ul>
+              <li><strong>Inefável</strong><span>Jazz Juvenil Grupo</span></li>
+              <li><strong>Em Mim, o que Ficou</strong><span>Jazz Juvenil Solo Feminino</span></li>
+              <li><strong>Entre Três</strong><span>Jazz Juvenil Conjunto</span></li>
+            </ul>
+          </div>
 
-        <div class="premio-card destaque">
-          <h4> PRÊMIOS DESTAQUE</h4>
-          <ul>
-            <li><strong>Isadora Marten</strong><span>Bailarina Destaque</span></li>
-            <li><strong>Matheus Ibanez</strong><span>Melhor Bailarino</span></li>
-            <li><strong>Nascidos do Coração do Oceano</strong><span>Destaque em Pesquisa e Proposta Cênica</span></li>
-            <li><strong>Carrego em Mim a Prova de Que Você Existiu</strong><span>Performance Destaque</span></li>
-            <li><strong>Matheus Ibanez</strong><span>Bolsa de estudos integral (100%) para o Curso de Férias do Raça Centro de Artes (SP)</span></li>
-          </ul>
-        </div>
+          <div class="premio-card destaque">
+            <h4>PRÊMIOS DESTAQUE</h4>
+            <ul>
+              <li><strong>Isadora Marten</strong><span>Bailarina Destaque</span></li>
+              <li><strong>Matheus Ibanez</strong><span>Melhor Bailarino</span></li>
+            </ul>
+          </div>
 
+        </div>
       </div>
+
+      <!-- EVENTO 2 -->
+      <div class="evento-premiacao">
+        <h3 class="evento-title">🏆 Prêmio Pelotas Di’Dança</h3>
+        <div class="premiacoes-grid">
+          
+          <!-- Se não teve 1º lugar nesse evento, é só apagar o card inteiro do 1º lugar -->
+          
+          <div class="premio-card segundo">
+            <h4>2º LUGAR</h4>
+            <ul>
+              <li><strong>Corpos em Turno</strong><span>Jazz Juvenil Conjunto</span></li>
+              <li><strong>Carrego em Mim a Prova de Que Você Existiu</strong><span>Jazz Adulto Solo Feminino</span></li>
+              <li><strong>O Sopro das Algas</strong><span>Estilo Livre Juvenil Grupo</span></li>
+              <li><strong>Nascidos do Coração do Oceano</strong><span>Jazz Juvenil Grupo</span></li>
+            </ul>
+          </div>
+
+          <div class="premio-card destaque">
+            <h4>PRÊMIOS DESTAQUE</h4>
+            <ul>
+              <li><strong>Nascidos do Coração do Oceano</strong><span>Destaque em Pesquisa e Proposta Cênica</span></li>
+              <li><strong>Carrego em Mim a Prova de Que Você Existiu</strong><span>Performance Destaque</span></li>
+              <li><strong>Matheus Ibanez</strong><span>Bolsa de estudos integral (100%) para o Curso de Férias do Raça (SP)</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <!-- Fim Evento 2 -->
+
     </div>
 
     <div class="galeria-grid" id="galeria-grid"></div>
@@ -130,5 +161,7 @@
       </div>
     </div>
   </footer>
-</div> <script src="galeria.js"></script> </body>
+</div> 
+<script src="galeria.js"></script> 
+</body>
 </html>
