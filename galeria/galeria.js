@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { inicio: 112, fim: 116, titulo: "Prêmio Pelotas Di’Dança", categoria: "festivais" },
         { inicio: 117, fim: 121, titulo: "Festa Junina", categoria: "aulas" },
         { inicio: 122, fim: 124, titulo: "Workshop Jazz", categoria: "eventos" },
-        { inicio: 125, fim: 140, titulo: "Aulões 2026", categoria: "eventos" },
+        { inicio: 125, fim: 132, titulo: "Aulões 2026", categoria: "eventos" },
         { inicio: 141, fim: 141, titulo: "115 anos do Clube Brilhante", categoria: "apresentacoes" },
         { inicio: 142, fim: 146, titulo: "Aulões Abertos 2025", categoria: "eventos" },
         { inicio: 147, fim: 153, titulo: "Carnaval", categoria: "aulas" },
